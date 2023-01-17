@@ -33,13 +33,12 @@ public class Television extends Electrodomestico{
 
     @Override
     public double precioFinal() {
-        double adiciont = super.precioFinal();
-        if(resolucion<40){
-            adiciont+=precio_base*0.3;
+        double adicion = super.precioFinal();
+        if(40 <= resolucion){
+            adicion+=precio_base*0.3;
+        } if(sintonizador){
+            adicion+=50;
         }
-        if(!sintonizador){
-            adiciont+=50;
-        }
-        return adiciont;
+        return adicion;
     }
 }

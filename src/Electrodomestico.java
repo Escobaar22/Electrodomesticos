@@ -46,27 +46,22 @@ public class Electrodomestico {
         return color;
     }
 
-    private char comprobarConsumoEnergetico(char letra){
-        char tipo_consum[]={'A','B','C','D','E','F'};
-        for (int i = 0; i <= tipo_consum.length; i++){
-            if(letra == tipo_consum[i]){
-            }else{
-                this.consumo_energetico=consum_energDef;
-            }
+    private void comprobarConsumoEnergetico(char letra){
+        if(letra>='A' && letra<= 'F'){
+            this.consumo_energetico=letra;
         }
-        return letra;
+        else {
+            this.consumo_energetico=consum_energDef;
+        }
     }
 
-    private String comprobarColor(String color){
-        String colores[] = {"blanco","negro","rojo","azul","gris"};
-        for(int i = 0; i <= colores.length; i++){
-            if(color == colores[i]){
-
-            }else{
-                this.color=color_def;
-            }
+    private void comprobarColor(String color){
+        String[] colores = {"blanco","negro","rojo","azul","gris"};
+        if(color.equals(colores)){
+            this.color=color;
+        }else{
+            this.color=color_def;
         }
-        return color;
     }
 
     public double precioFinal(){
